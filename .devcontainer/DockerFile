@@ -1,0 +1,16 @@
+FROM node:latest
+
+# Install X11
+RUN apt-get update && apt-get install -y x11-apps \
+    libwebkit2gtk-4.0-dev \
+    build-essential \
+    curl \
+    wget \
+    libssl-dev \
+    libgtk-3-dev \
+    libayatana-appindicator3-dev \
+    librsvg2-dev
+
+# Set up display variable
+ENV DISPLAY=host.docker.internal:0
+
